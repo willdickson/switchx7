@@ -11,7 +11,7 @@ class SwitchX7(serial.Serial):
         num = swtich number, integer in range (0,1,2,...,6)
         val = switch state, boolean (True/False)
         """
-        if not num in range(0,8):
+        if not num in range(0,7):
             raise(ValueError, 'num must be between 0 and 8')
         if not type(val) == bool:
             raise(ValueError, 'val must be boolean')
@@ -29,9 +29,9 @@ class SwitchX7(serial.Serial):
         if not type(val) == bool:
             raise(ValueError, 'val must be boolean')
         if val == True:
-            cmd = '[8, 1]\n'
+            cmd = '[7, 1]\n'
         else:
-            cmd = '[8, 0]\n'
+            cmd = '[7, 0]\n'
         self.write(cmd.encode())
 
 
