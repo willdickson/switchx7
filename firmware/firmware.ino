@@ -40,14 +40,14 @@ void handle_message(uint16_t cmd_num, uint16_t cmd_val) {
     if (cmd_num < 7) {
         if ((cmd_val==0) || (cmd_val==1)) {
             digitalWrite(Pin[cmd_num], cmd_val);
-            digitalWrite(PairPin[10], cmd_val); // Hardcode for debugging purposes
+            digitalWrite(PairPin[cmd_num], cmd_val); // Hardcode for debugging purposes
         }
     }
     if (cmd_num == 7) {
         if ((cmd_val == 0 ) || (cmd_val==1)) {
             for (uint8_t i=0; i<NumPin; i++) {
                 digitalWrite(Pin[i],cmd_val);
-                digitalWrite(PairPin[10], cmd_val); // Hardcode for debugging purposes
+                digitalWrite(PairPin[i], cmd_val); // Hardcode for debugging purposes
             }
         }
     }
