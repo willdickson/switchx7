@@ -12,9 +12,9 @@ class SwitchX7(serial.Serial):
         val = switch state, boolean (True/False)
         """
         if not num in range(0,7):
-            raise(ValueError, 'num must be between 0 and 8')
+            raise ValueError('num must be between 0 and 7')
         if not type(val) == bool:
-            raise(ValueError, 'val must be boolean')
+            raise  ValueError('val must be boolean')
         if val == True:
             cmd = '[{}, 1]\n'.format(num)
         else:
@@ -27,7 +27,7 @@ class SwitchX7(serial.Serial):
         val = state, boolean (True/False)
         """
         if not type(val) == bool:
-            raise(ValueError, 'val must be boolean')
+            raise ValueError('val must be boolean')
         if val == True:
             cmd = '[7, 1]\n'
         else:
